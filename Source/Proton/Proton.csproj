@@ -28,8 +28,8 @@
 		<NoStdLib>true</NoStdLib>
 	</PropertyGroup>
 	<ItemGroup>
-		<!--<PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.3901" GeneratePathProperty="true" />-->
-		<PackageReference Include="Lib.Harmony" Version="2.3.1.1" ExcludeAssets="runtime" />
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4066" GeneratePathProperty="true" />
+		<PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" />
 		<PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
 		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -68,13 +68,11 @@
 	<Target Name="UpdateReferences" AfterTargets="ResolveLockFileReferences">
 		<Message Importance="High" Text="1. Update References at ($(PkgKrafs_Rimworld_Ref))" />
 		<PropertyGroup>
-			<PubliciseOutputPath>D:\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Publicsized</PubliciseOutputPath>
-			<!--<PubliciseOutputPath>$(PkgKrafs_Rimworld_Ref)\ref\net472\</PubliciseOutputPath>-->
+			<PubliciseOutputPath>$(PkgKrafs_Rimworld_Ref)\ref\net472\</PubliciseOutputPath>
 			<AssemblyCSharp_Publicised>$(PubliciseOutputPath)Assembly-CSharp_publicised.dll</AssemblyCSharp_Publicised>
 			<Unity_CoreModule_Publicised>$(PubliciseOutputPath)UnityEngine.CoreModule_publicised.dll</Unity_CoreModule_Publicised>
 		</PropertyGroup>
 		<ItemGroup>
-			<Reference Include="D:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data/Managed/Unity*" ExcludeAssets="runtime" />
 			<Reference Remove="$(PkgKrafs_Rimworld_Ref)\ref\net472\Assembly-CSharp.dll" />
 			<Reference Remove="$(PkgKrafs_Rimworld_Ref)\ref\net472\UnityEngine.CoreModule.dll" />
 			<Reference Include="$(AssemblyCSharp_Publicised)">
