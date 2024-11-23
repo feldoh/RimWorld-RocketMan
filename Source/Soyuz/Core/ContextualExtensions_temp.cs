@@ -27,7 +27,7 @@ namespace Soyuz
                 Faction playerFaction = Faction.OfPlayer;
                 if (pawn.factionInt == playerFaction)
                     return false;
-                if (pawn.guest?.isPrisonerInt ?? false && pawn.guest?.hostFactionInt == playerFaction)
+                if ((pawn.guest?.isPrisonerInt ?? false) && pawn.guest?.hostFactionInt == playerFaction)
                     return false;
                 if (RocketPrefs.TimeDilationVisitors)
                 {
